@@ -1,0 +1,65 @@
+﻿<Page x:Class="BeautySalon.pages.ClientServicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BeautySalon.pages" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ClientServicePage">
+
+    <Page.Resources>
+        <sys:String x:Key="defaultImage">
+            pack://application:,,,/images/logo/beauty_logo.png
+        </sys:String>
+    </Page.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="375*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Height="26">
+            <TextBlock Text="Сервисы клиента: " FontFamily="Tahoma" FontSize="20"/>
+            <TextBlock x:Name="TbClientInfo"  FontSize="20"/>
+
+        </StackPanel>
+        <StackPanel x:Name="spServiceInfo" Margin="0,52,0,0" Grid.RowSpan="2"/>
+
+        <ListView x:Name="LViewService" Grid.Row="1" Margin="5,5,5,5" d:ItemsSource="{d:SampleData ItemCount=1}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Width="180" Height="100" Margin="5" Source ="{Binding Path=Service.ImgPath, FallbackValue={StaticResource defaultImage}}"/>
+
+                            <StackPanel Grid.Column="1" Margin="5">
+                                <TextBlock Text="{Binding Path=Service.Title}" FontWeight="Bold"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path=Service.CostText}" TextDecorations="Strikethrough"/>
+                                    <TextBlock Text="{Binding Path=Service.DiscountCost, StringFormat='\ {0} рублей за '}"/>
+                                    <TextBlock Text="{Binding Path=Service.DurationInMin, StringFormat='\{0} минут'}"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding Path=Service.DiscountText}"/>
+                                <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                                    <Button Width="120" x:Name="BtnRefrService" BorderBrush="Black" Background="White"  Foreground="#ff4a6d" Cursor="Hand" Content="Редактировать" Click="BtnRefrService_Click"/>
+                                    <Button Width="80" x:Name="BtnDelService" BorderBrush="Black" Background="#FF4A6D"  Foreground="White" Cursor="Hand" Content="Удалить" Click="BtnDelService_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

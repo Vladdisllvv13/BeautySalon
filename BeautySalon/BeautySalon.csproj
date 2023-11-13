@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77FBE649-100F-461C-8412-03BCA5B8CA7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BeautySalon</RootNamespace>
+    <AssemblyName>BeautySalon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="pages\AddEditClientPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\ClentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\ClientServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pages\EditServicesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="pages\AddEditClientPage.xaml.cs">
+      <DependentUpon>AddEditClientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ClentPage.xaml.cs">
+      <DependentUpon>ClentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\ClientServicePage.xaml.cs">
+      <DependentUpon>ClientServicePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\EditServicesPage.xaml.cs">
+      <DependentUpon>EditServicesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\logo\beauty_logo.ico" />
+    <Resource Include="images\logo\beauty_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\122454.png" />
+    <Resource Include="images\96.png" />
+    <Resource Include="images\face.png" />
+    <Resource Include="images\makeup.jpg" />
+    <Resource Include="images\man.png" />
+    <Resource Include="images\mask.jpeg" />
+    <Resource Include="images\piling.jpg" />
+    <Resource Include="images\soliarij.jpg" />
+    <Resource Include="images\брови.png" />
+    <Resource Include="images\Гречишный массаж.jpg" />
+    <Resource Include="images\Декорирование нарощенных ресниц стразами.jpg" />
+    <Resource Include="images\Демакияж.jpg" />
+    <Resource Include="images\Депиляция воском.jpg" />
+    <Resource Include="images\Европейский маникюр.jpg" />
+    <Resource Include="images\ИК-сауна.jpg" />
+    <Resource Include="images\Классический маникюр.png" />
+    <Resource Include="images\Комбинированный маникюр.jpg" />
+    <Resource Include="images\Контурная пластика.jpg" />
+    <Resource Include="images\массаж.jpg" />
+    <Resource Include="images\Мезотерапия.jpg" />
+    <Resource Include="images\Моделирование ресниц.jpg" />
+    <Resource Include="images\ногти.png" />
+    <Resource Include="images\Окрашивание бровей.jpg" />
+    <Resource Include="images\Парафинотерапия.jpg" />
+    <Resource Include="images\Покрытие ногтей гель-лаком.jpg" />
+    <Resource Include="images\Полировка ногтей.jpg" />
+    <Resource Include="images\Прессотерапия.jpg" />
+    <Resource Include="images\Прокол ушей пистолетом.png" />
+    <Resource Include="images\Ресницы.png" />
+    <Resource Include="images\Снятие ресниц.jpg" />
+    <Resource Include="images\Стоун-терапия.jpg" />
+    <Resource Include="images\стрижка.png" />
+    <Resource Include="images\Укрепление ногтей гелем.jpg" />
+    <Resource Include="images\Шугаринг.jpg" />
+    <Resource Include="images\Экспресс SPA.png" />
+    <Resource Include="images\Экспресс-педикюр.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
